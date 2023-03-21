@@ -1,45 +1,68 @@
-Flask Timer App
-This is a simple timer app built with Flask, a Python web framework. The app allows users to set a countdown timer for a specified amount of time, and receive a notification when the time is up. The app can be used for a variety of purposes, such as timing tasks, workouts, or meetings.
+# Flask Timer App
 
-Features
-The Flask Timer App has the following features:
+This is a simple Flask web application that allows you to set a timer, watch it countdown and reset the timer.
 
-A simple, user-friendly interface that allows users to easily set a timer
-A countdown timer that displays the remaining time in minutes and seconds
-A notification system that alerts users when the timer reaches zero
-A configurable alarm sound that plays when the timer ends
-An option to set the timer to repeat automatically after it finishes
-A history of all the timers that the user has set, along with their start and end times
-Technologies
-The Flask Timer App is built with the following technologies:
+## Features
 
-Flask: A Python web framework for building web applications
-Bootstrap: A popular CSS framework for building responsive, mobile-first websites
-JavaScript: A programming language for adding interactivity to web pages
-jQuery: A JavaScript library for simplifying HTML document traversal and manipulation
-SQLite: A lightweight relational database for storing data locally
-Installation
-To run the Flask Timer App on your local machine, follow these steps:
+- Set a timer in minutes and seconds
+- Timer does not reset on page refresh
+- Reset the timer to its original value
+- Server side timer values
+## Deployment
 
-Clone the GitHub repository:
-bash
-Copy code
+
+
+Clone this repository to your local machine:
+```bash
 git clone https://github.com/your-username/flask-timer-app.git
-Install the required Python packages using pip:
-Copy code
+```
+
+Change into the app's directory:
+```bash
+cd flask-timer-app
+```
+
+Create a virtual environment
+```bash
+python3 -m venv env
+```
+
+Activate virtual environment
+```bash
+source env/bin/Activate
+```
+
+Install the dependencies:
+```bash
 pip install -r requirements.txt
-Run the Flask app:
-Copy code
+```
+
+To start the app, run the following command:
+```
 python app.py
-Open your web browser and navigate to http://localhost:5000 to access the app.
-Contributing
-If you would like to contribute to the Flask Timer App, feel free to submit a pull request with your changes. Before submitting a pull request, please make sure that your code adheres to the following guidelines:
+```
 
-Code should be well-documented and easy to understand
-Code should follow PEP 8 style guidelines
-Code should be thoroughly tested
-License
-The Flask Timer App is licensed under the MIT License. See LICENSE for more information.
+This will start the Flask development server, and you can access the app by visiting http://localhost:5005 in your web browser.
 
 
+To deploy this project run
+
+```bash
+  npm run deploy
+```
+
+
+## Tech Stack
+
+**Python** (version 3.6 or higher)
+
+**HTML5**
+
+**JavaScript**
+
+
+
+## Authors
+
+This app was created by [Hirak Desai](https://www.github.com/hirak214)
 

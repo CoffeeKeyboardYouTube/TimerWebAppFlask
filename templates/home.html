@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer app</title>
+
+<style>
+     #timer {
+        position: absolute;
+        margin-left: auto; 
+        margin-right: auto; 
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:rgba(0,0,0,.5);
+        color:#fff;
+        display:block;
+        margin-top: 1.2em;
+        margin-bottom: 0;
+        font-size: 4.5rem;
+        width: 4.6em;
+        text-align:center;
+        font-weight:bold;
+        border-radius:5%;
+      }
+</style>
+</head>
+<body>
+    <h1 style="text-align: center;">Timer App</h1>
+
+   <p id="timer"> <span id="remaining_time"></span></p>
+
+   <form action="/reset" method="post">
+        <input type="submit" value="Reset Timer">
+   </form>
+</body>
+<script>
+    function updateRemainingTime() {
+        fetch('/remaining_time')
+        .then(response => response.json())
+        .then(data => {
+            let minutes = Math.floor(data.remaining_time_in_seconds / 60);
+            let seconds = Math.floor(data.remaining_time_in_seconds % 60);
+            if (seconds < 10 && seconds >= 0) {
+                seconds = "0" + seconds;
+            }
+
+            let remainingTimeElement = document.getElementById("remaining_time");
+            remainingTimeElement.innerText = `${minutes}:${seconds}`;
+            document.getElementById("remaining_time").innerText = minutes + ":" + seconds;
+
+        })
+    }
+    setInterval(updateRemainingTime, 500);
+</script>
+</html>
